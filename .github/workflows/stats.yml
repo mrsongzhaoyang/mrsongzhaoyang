@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -36,13 +36,15 @@ jobs:
 
       - name: Commit changes
         run: |
+          set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain assets)" ]; then
-            git add assets/stats.svg assets/langs.svg
-            git commit -m "chore(stats): refresh profile cards"
-            git push
-            echo "updated"
-          else
+          if [ -z "$(git status --porcelain assets)" ]; then
             echo "nothing changed"
+            exit 0
           fi
+          git add assets/stats.svg assets/langs.svg
+          git commit -m "chore(stats): refresh profile cards"
+          # 跑的过程中可能有人（或别的 workflow）推了新提交，先 rebase 再推
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
