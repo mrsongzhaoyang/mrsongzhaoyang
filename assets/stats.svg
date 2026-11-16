@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="150"
+     viewBox="0 0 1000 150" fill="none" role="img" aria-label="GitHub 数据面板">
+  <title>GitHub 数据面板</title>
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1000" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E2136"/>
+      <stop offset="1" stop-color="#081524"/>
+    </linearGradient>
+    <linearGradient id="sbar" x1="0" y1="0" x2="0" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD93D" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFD93D" stop-opacity="0.12"/>
+    </linearGradient>
+    <clipPath id="sclip"><rect width="1000" height="150" rx="18"/></clipPath>
+    <style>
+      .ink { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .mono { font-family: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, 'PingFang SC', monospace; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#sclip)">
+    <rect width="1000" height="150" fill="url(#sbg)"/>
+    <rect x="0" y="0" width="5" height="150" fill="url(#sbar)"/>
+    <circle cx="980" cy="0" r="90" fill="#FFD93D" fill-opacity="0.05"/>
+  </g>
+  <rect x="0.75" y="0.75" width="998.5" height="148.5" rx="17.25"
+        stroke="#1E3A5F" stroke-opacity="0.85" stroke-width="1.5"/>
+  <line x1="267" y1="44" x2="267" y2="116" stroke="#1E3A5F" stroke-opacity="0.55" stroke-dasharray="3 5"/>
+  <line x1="500" y1="44" x2="500" y2="116" stroke="#1E3A5F" stroke-opacity="0.55" stroke-dasharray="3 5"/>
+  <line x1="733" y1="44" x2="733" y2="116" stroke="#1E3A5F" stroke-opacity="0.55" stroke-dasharray="3 5"/>
+
+  <text class="mono" x="150.5" y="46" text-anchor="middle" font-size="11.5"
+        letter-spacing="2.2" fill="#D4AF37" fill-opacity="0.85">PROJECTS</text>
+  <text class="ink" x="150.5" y="96" text-anchor="middle" font-size="42"
+        font-weight="700" fill="#E8EEF6">5</text>
+  <text class="ink" x="150.5" y="122" text-anchor="middle" font-size="12"
+        fill="#8FA6BE">公开项目</text>
+  <text class="mono" x="383.5" y="46" text-anchor="middle" font-size="11.5"
+        letter-spacing="2.2" fill="#D4AF37" fill-opacity="0.85">STARS</text>
+  <text class="ink" x="383.5" y="96" text-anchor="middle" font-size="42"
+        font-weight="700" fill="#E8EEF6">2</text>
+  <text class="ink" x="383.5" y="122" text-anchor="middle" font-size="12"
+        fill="#8FA6BE">被收藏</text>
+  <text class="mono" x="616.5" y="46" text-anchor="middle" font-size="11.5"
+        letter-spacing="2.2" fill="#D4AF37" fill-opacity="0.85">CONTRIBUTIONS</text>
+  <text class="ink" x="616.5" y="96" text-anchor="middle" font-size="42"
+        font-weight="700" fill="#E8EEF6">47</text>
+  <text class="ink" x="616.5" y="122" text-anchor="middle" font-size="12"
+        fill="#8FA6BE">近 12 个月</text>
+  <text class="mono" x="849.5" y="46" text-anchor="middle" font-size="11.5"
+        letter-spacing="2.2" fill="#D4AF37" fill-opacity="0.85">ON GITHUB</text>
+  <text class="ink" x="849.5" y="96" text-anchor="middle" font-size="42"
+        font-weight="700" fill="#E8EEF6">2017</text>
+  <text class="ink" x="849.5" y="122" text-anchor="middle" font-size="12"
+        fill="#8FA6BE">加入年份</text>
+</svg>
