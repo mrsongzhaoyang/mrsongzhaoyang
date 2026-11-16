@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340"
+     viewBox="0 0 1280 340" fill="none" role="img"
+     aria-label="宋朝阳 SONG ZHAOYANG - 数据开发分析师 / 独立开发者">
+  <title>宋朝阳 · SONG ZHAOYANG</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#050D18"/>
+      <stop offset="0.55" stop-color="#0A1A2C"/>
+      <stop offset="1" stop-color="#0C263C"/>
+    </linearGradient>
+    <radialGradient id="glowGold" cx="0" cy="0" r="1"
+        gradientTransform="translate(1080 30) rotate(118) scale(540 430)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD93D" stop-opacity="0.20"/>
+      <stop offset="0.55" stop-color="#D4AF37" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="0" cy="0" r="1"
+        gradientTransform="translate(90 340) rotate(-62) scale(520 340)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12B7F5" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#12B7F5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nameGrad" x1="72" y1="130" x2="330" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFE7A3"/>
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="1010" y1="120" x2="1120" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE7A3"/>
+      <stop offset="1" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="76" y1="0" x2="220" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD93D" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFD93D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomLine" x1="0" y1="0" x2="1280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD93D" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#D4AF37" stop-opacity="0.55"/>
+      <stop offset="0.62" stop-color="#12B7F5" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#12B7F5" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="150" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD93D" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFF3C4" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFD93D" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#FFFFFF" fill-opacity="0.055"/>
+    </pattern>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="glowText" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#FFD93D" flood-opacity="0.45"/>
+    </filter>
+    <style>
+      .ink { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .mono { font-family: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, 'PingFang SC', monospace; }
+      .blink { animation: blink 1.4s steps(1, end) infinite; }
+      .float { animation: floaty 5s ease-in-out infinite; }
+      @keyframes blink { 0%, 49.9% { opacity: 1 } 50%, 100% { opacity: 0 } }
+      @keyframes floaty { 0%, 100% { opacity: .45 } 50% { opacity: 1 } }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1280" height="340" fill="url(#bg)"/>
+  <rect width="1280" height="340" fill="url(#dots)"/>
+  <rect width="1280" height="340" fill="url(#glowGold)"/>
+  <rect width="1280" height="340" fill="url(#glowBlue)"/>
+
+  <!-- hud corner brackets -->
+  <g stroke="#D4AF37" stroke-opacity="0.40" stroke-width="1.4" fill="none">
+    <path d="M30 58 V30 H58"/>
+    <path d="M1222 30 H1250 V58"/>
+    <path d="M1250 282 V310 H1222"/>
+    <path d="M58 310 H30 V282"/>
+  </g>
+
+  <!-- left: identity -->
+  <text class="mono" x="76" y="104" font-size="13.5" letter-spacing="4.2"
+        fill="#FFD93D" fill-opacity="0.9">// HELLO, WORLD</text>
+  <rect x="272" y="93" width="8" height="15" fill="#FFD93D" fill-opacity="0.85" class="blink"/>
+
+  <text class="ink" x="72" y="186" font-size="68" font-weight="700"
+        letter-spacing="2" fill="url(#nameGrad)">宋朝阳</text>
+
+  <text class="mono" x="76" y="226" font-size="16.5" letter-spacing="7.6"
+        fill="#D4AF37" fill-opacity="0.95">SONG ZHAOYANG</text>
+
+  <rect x="76" y="252" width="190" height="2" fill="url(#rule)"/>
+
+  <text class="ink" x="76" y="292" font-size="16.5" fill="#9FB3C8"
+        letter-spacing="0.6">数据开发分析师 · 独立开发者 · 桌面工具 / AI 自动化</text>
+
+  <text class="mono" x="76" y="323" font-size="13.5" letter-spacing="1.4"
+        fill="#6E8399">github.com/mrsongzhaoyang</text>
+
+  <!-- right: orbital code mark -->
+  <g>
+    <circle cx="1065" cy="165" r="150" fill="#D4AF37" fill-opacity="0.10" filter="url(#soft)"/>
+    <circle cx="1065" cy="165" r="128" stroke="#1E3A5F" stroke-opacity="0.85"/>
+    <circle cx="1065" cy="165" r="128" stroke="#FFD93D" stroke-opacity="0.55"
+            stroke-width="2" stroke-linecap="round" stroke-dasharray="2 16">
+      <animateTransform attributeName="transform" type="rotate"
+                        from="0 1065 165" to="360 1065 165" dur="36s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1065" cy="165" r="100" fill="#0A1A2C" fill-opacity="0.92" stroke="#1E3A5F"/>
+    <text class="mono" x="1065" y="186" text-anchor="middle" font-size="46"
+          font-weight="700" fill="url(#codeGrad)" filter="url(#glowText)">&lt;/&gt;</text>
+
+    <g>
+      <circle cx="1065" cy="37" r="4.5" fill="#FFD93D"/>
+      <animateTransform attributeName="transform" type="rotate"
+                        from="0 1065 165" to="360 1065 165" dur="18s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <circle cx="1193" cy="165" r="3" fill="#12B7F5" fill-opacity="0.9"/>
+      <animateTransform attributeName="transform" type="rotate"
+                        from="0 1065 165" to="-360 1065 165" dur="26s" repeatCount="indefinite"/>
+    </g>
+
+    <g fill="#FFE7A3">
+      <circle cx="905" cy="74" r="2.6" class="float"/>
+      <circle cx="1195" cy="262" r="2.2" class="float" style="animation-delay:.9s"/>
+      <circle cx="982" cy="286" r="2.0" class="float" style="animation-delay:1.8s"/>
+    </g>
+  </g>
+
+  <!-- bottom light -->
+  <rect x="0" y="337" width="1280" height="2" fill="url(#bottomLine)"/>
+  <rect x="-150" y="336" width="150" height="3" fill="url(#spark)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate"
+                      from="0 0" to="1430 0" dur="9s" repeatCount="indefinite"/>
+  </rect>
+</svg>
