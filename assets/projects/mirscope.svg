@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="158"
+     viewBox="0 0 1000 158" fill="none" role="img" aria-label="Mirscope">
+  <title>Mirscope — Mirscope</title>
+  <defs>
+    <linearGradient id="card2" x1="0" y1="0" x2="1000" y2="158" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E2136"/>
+      <stop offset="1" stop-color="#081524"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="158" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12B7F5" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#12B7F5" stop-opacity="0.12"/>
+    </linearGradient>
+    <clipPath id="clip2">
+      <rect width="1000" height="158" rx="18"/>
+    </clipPath>
+    <style>
+      .ink { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+      .mono { font-family: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, 'PingFang SC', monospace; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#clip2)">
+    <rect width="1000" height="158" fill="url(#card2)"/>
+    <rect x="0" y="0" width="5" height="158" fill="url(#bar2)"/>
+    <circle cx="966" cy="4" r="86" fill="#12B7F5" fill-opacity="0.07"/>
+    <text class="mono" x="986" y="145" text-anchor="end" font-size="116" font-weight="700"
+          fill="#FFFFFF" fill-opacity="0.035">02</text>
+  </g>
+  <rect x="0.75" y="0.75" width="998.5" height="156.5" rx="17.25"
+        stroke="#1E3A5F" stroke-opacity="0.85" stroke-width="1.5"/>
+
+  <text class="mono" x="34" y="36" font-size="11.5" letter-spacing="2.4"
+        fill="#12B7F5" fill-opacity="0.8">PROJECT 02</text>
+
+  <text class="ink" x="34" y="70" font-size="26" font-weight="700"
+        fill="#E8EEF6">Mirscope</text>
+
+  <text class="ink" x="34" y="99" font-size="15" fill="#A9BCCE">本地优先的 AI Prompt 全景分析平台，对话数据默认不出本机</text>
+  <g>
+    <rect x="34.0" y="113" width="94.5" height="25" rx="12.5"
+          fill="#12B7F5" fill-opacity="0.09" stroke="#12B7F5" stroke-opacity="0.30"/>
+    <text class="mono" x="45.0" y="130" font-size="12.5"
+          fill="#12B7F5" fill-opacity="0.92">TypeScript</text>
+  </g>
+  <g>
+    <rect x="137.5" y="113" width="36.5" height="25" rx="12.5"
+          fill="#12B7F5" fill-opacity="0.09" stroke="#12B7F5" stroke-opacity="0.30"/>
+    <text class="mono" x="148.5" y="130" font-size="12.5"
+          fill="#12B7F5" fill-opacity="0.92">AI</text>
+  </g>
+  <g>
+    <rect x="183.0" y="113" width="101.7" height="25" rx="12.5"
+          fill="#12B7F5" fill-opacity="0.09" stroke="#12B7F5" stroke-opacity="0.30"/>
+    <text class="mono" x="194.0" y="130" font-size="12.5"
+          fill="#12B7F5" fill-opacity="0.92">Local-first</text>
+  </g>
+  <g>
+    <circle cx="952" cy="79" r="18" fill="#0F2438" stroke="#1E3A5F"/>
+    <text x="952" y="86" text-anchor="middle" font-size="16" fill="#12B7F5">↗</text>
+  </g>
+</svg>
