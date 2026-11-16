@@ -17,6 +17,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -60,25 +61,52 @@ def get_json(url: str, timeout: int = 25, retries: int = 3):
     raise RuntimeError(f"GET {url} failed: {last}")
 
 
+def get_text(url: str, timeout: int = 25, retries: int = 3) -> str:
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; profile-readme-stats)"}
+    last = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read().decode("utf-8", "ignore")
+        except Exception as exc:  # noqa: BLE001
+            last = exc
+            if attempt + 1 < retries:
+                time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"GET {url} failed: {last}")
+
+
+def fetch_contributions() -> int:
+    """优先读 GitHub 自己页面上的「近一年贡献」数字，保证和主页绿格子完全一致。"""
+    try:
+        html = get_text(f"https://github.com/users/{USER}/contributions")
+        m = re.search(r"([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year", html)
+        if m:
+            return int(m.group(1).replace(",", ""))
+    except Exception as exc:  # noqa: BLE001
+        print(f"  ! profile contributions: {exc}", file=sys.stderr)
+
+    try:
+        c = get_json(f"https://github-contributions-api.jogruber.de/v4/{USER}?y=last")
+        return int(c.get("total", {}).get("lastYear", 0))
+    except Exception as exc:  # noqa: BLE001
+        print(f"  ! contributions fallback: {exc}", file=sys.stderr)
+    return 0
+
+
 def collect() -> dict:
     user = get_json(f"https://api.github.com/users/{USER}")
-    repos = get_json(f"https://api.github.com/users/{USER}/repos?per_page=100&sort=pushed")
+    all_repos = get_json(f"https://api.github.com/users/{USER}/repos?per_page=100&sort=pushed")
+
+    # Profile 仓库本身不算「作品」，统计里排除掉
+    repos = [r for r in all_repos if not r.get("fork") and r["name"] != USER]
 
     langs: dict[str, int] = {}
     for repo in repos:
-        if repo.get("fork"):
-            continue
         # 这里失败必须报错：宁可让 workflow 红掉，也不要提交一份缺了仓库的假数据
         data = get_json(f"https://api.github.com/repos/{USER}/{repo['name']}/languages")
         for name, size in data.items():
             langs[name] = langs.get(name, 0) + int(size)
-
-    contributions = 0
-    try:
-        c = get_json(f"https://github-contributions-api.jogruber.de/v4/{USER}?y=last")
-        contributions = int(c.get("total", {}).get("lastYear", 0))
-    except Exception as exc:  # noqa: BLE001
-        print(f"  ! contributions: {exc}", file=sys.stderr)
 
     since = 2017
     try:
@@ -87,9 +115,9 @@ def collect() -> dict:
         pass
 
     return {
-        "repos": int(user.get("public_repos", len(repos))),
+        "repos": len(repos),
         "stars": sum(int(r.get("stargazers_count", 0)) for r in repos),
-        "contributions": contributions,
+        "contributions": fetch_contributions(),
         "since": since,
         "langs": langs,
     }
